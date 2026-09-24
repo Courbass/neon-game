@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2775.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Neon Outpost — Mini Shooter&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="styles.css" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="game-shell"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="game" width="1080" height="620"&gt;&lt;/canvas&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;header class="hud"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hud-group lives"&gt;&lt;span class="hud-label"&gt;VIDAS // BOOST&lt;/span&gt;&lt;div class="health-track"&gt;&lt;div id="healthBar"&gt;&lt;/div&gt;&lt;/div&gt;&lt;b id="healthText"&gt;● ● ●&lt;/b&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hud-group mission"&gt;&lt;span class="hud-label"&gt;NIVEL &lt;b id="levelText"&gt;01&lt;/b&gt;&lt;/span&gt;&lt;small id="waveText"&gt;OLEADA 1&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hud-group score"&gt;&lt;span class="hud-label"&gt;PUNTUACIÓN&lt;/span&gt;&lt;b id="scoreText"&gt;000000&lt;/b&gt;&lt;small id="killsText"&gt;0 objetivos&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Controles Móviles --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="mobile-controls" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="joystick-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="joystick-base"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="joystick-stick"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="fire-button"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="startScreen" class="overlay start-screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="eyebrow"&gt;SECTOR 07 // ALERTA ACTIVA&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;NEON&lt;br&gt;&lt;em&gt;OUTPOST&lt;/em&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p id="control-hint"&gt;Usa WASD/FLECHAS para moverte · ESPACIO para disparar&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="startButton" class="primary-button"&gt;INICIAR MISIÓN &lt;span&gt;↗&lt;/span&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="pauseScreen" class="overlay pause-screen hidden"&gt;&lt;p&gt;PAUSA&lt;/p&gt;&lt;span id="pause-hint"&gt;PULSA P PARA CONTINUAR&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="gameOverScreen" class="overlay gameover-screen hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="eyebrow"&gt;TRANSMISIÓN INTERRUMPIDA&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;NÚCLEO&lt;br&gt;&lt;em&gt;PERDIDO.&lt;/em&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p id="finalScore"&gt;Puntuación: 0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="restartButton" class="primary-button"&gt;VOLVER A DESPLEGAR &lt;span&gt;↻&lt;/span&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="toast" class="toast"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="game.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
